@@ -39,12 +39,5 @@
     Git memiliki banyak command, diantaranya:
     - Pull: mengambil perubahan dari remote repository.
     - Push: mengirim perubahan ke remote repository.
-    - Fork: membuat salinan dari repository orang lain ke repository kita.
     - Pull request: permintaan untuk menggabungkan perubahan pada repository orang lain ke repository kita.
     - Merge conflict: konflik yang terjadi saat menggabungkan perubahan dari branch lain ke branch aktif.
-    - Rebase: menggabungkan perubahan dari branch lain ke branch aktif, tanpa membuat commit tambahan.
-    - Tag: menandai commit tertentu.
-    - Revert: mengembalikan commit tertentu ke commit sebelumnya.
-    - Reset: mengembalikan commit tertentu ke commit sebelumnya, dan menghapus commit setelahnya.
-    - Cherry pick: mengambil commit tertentu dari branch lain, dan menambahkannya ke branch aktif.
-    - Stash: menyimpan perubahan sementara, dan mengembalikan working directory ke commit sebelumnya.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+</head>
+<body>
+    <h1>Create Product</h1>
+    <h2>Detail Product</h2>
+    <p>Product Name: <input type="text" name="productName"></p>
+
+    <section id="ProductCategory">
+        <label for="ProductCategory">Product Category:</label>
+            <select id="ProductCategory" name="productCategory">
+                <option value="a">Kategori A</option>
+                <option value="b">Kategori B</option>
+                <option value="c">Kategori C</option>
+            </select>
+    </section>
+
+    <section id="ProductFreshness">
+        <p>Product Freshness: </p>
+        <ul>
+            <li><input type="radio" id="freshness1" name="freshness" value="fresh">Brand New</li>
+            <li><input type="radio" id="freshness2" name="freshness" value="used">Second</li>
+            <li><input type="radio" id="freshness3" name="freshness" value="refurbished">Refurbished</li>
+        </ul>
+    </section>
+
+    <section id="imageproduct">
+        <p>Image of Product <button type="button" name="imageproduct" id="imageproduct" value="imageproduct">Choose File</button></p>
+    </section>
+
+    <section id="ProductDescription">
+        <label for="AdditionalDescription">Additional Description:</label> 
+        <textarea name="productDescription" id="productDescription" cols="30" rows="10"></textarea>
+    </section>
+
+    <section id="ProductPrice">
+        <p>Product Price: <input type="number" name="productPrice"></p>
+    </section>
+
+    <section id="submit">
+        <button type="submit" name="submit" id="submit" value="submit">Submit</button>
+    </section>
+
+</body>
+</html>

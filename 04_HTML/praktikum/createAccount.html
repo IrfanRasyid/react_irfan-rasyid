@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+</head>
+<body>
+    <header>
+        <h1>Create Account</h1>
+    </header>
+    <main>
+        <h2>Detail Form</h2>
+        <p>First Name: </p>
+        <input type="text" name="firstName" required>
+        <p>Last Name: </p>
+        <input type="text" name="lastName" required>
+        <p>User Name: </p> 
+        <input type="text" name="userName" required>
+        <p>Email: </p>
+        <input type="email" name="email" required>
+        <section id="gender" >
+            <p>Gender: </p>
+            <ul>
+                <li><input type="radio" name="male" value="male">Male</li>
+                <li><input type="radio" name="female" value="female">Female</li>
+            </ul>
+        </section>
+        <section id="address">
+            <p>Address: </p>
+            <input name="address" id="address" required></input>
+            <p>Address 2: </p>
+            <input name="address2" id="address" required></input>
+        </section>
+        <section id="nationality">
+            <p>Nationality</p>
+            <select name="nationality" required>
+                <option value="indonesia">Indonesia</option>
+                <option value="usa">USA</option>
+                <option value="japan">Japan</option>
+            </select>
+        </section>
+        <section id="language">
+            <p>Language Spoken: </p>
+            <ul>
+                <li><input type="checkbox" name="bahasa" value="bahasa">Bahasa Indonesia</li>
+                <li><input type="checkbox" name="english" value="english">English</li>
+                <li><input type="checkbox" name="other" value="other">Other</li>
+            </ul>
+        </section>
+        <section id="create">
+            <button type="submit" name="create" value="create">Create Account</button>
+        </section>
+
+    </main>
+</body>
+</html>

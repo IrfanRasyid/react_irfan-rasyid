@@ -80,7 +80,7 @@ nav>li>a:hover {
     justify-content: space-between;
 }
 
-h1{
+.content h1{
     color: #FFF;
     font-family: 'montserrat', sans-serif;
     font-size: 48px;

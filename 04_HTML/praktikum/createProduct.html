@@ -9,8 +9,9 @@
     <header><h1>Create Product</h1>
             <h2>Detail Product</h2>
     </header>    
-    
-    <p>Product Name: <input type="text" name="productName" minlength="6" maxlength="50" required></p>
+    <form action="createProduct.php" method="POST" enctype="multipart/form-data">
+    <label for="productName">Product Name: </label>
+    <input type="text" id="productName" name="productName" required minlength="6" maxlength="50">
 
     <section id="ProductCategory">
         <label for="ProductCategory">Product Category:</label>
@@ -22,7 +23,7 @@
     </section>
 
     <section id="ProductFreshness">
-        <p>Product Freshness: </p>
+        <label for="ProductFreshness">Product Freshness: </label>
         <ul>
             <li><input type="radio" id="freshness1" name="freshness" value="fresh">Brand New</li>
             <li><input type="radio" id="freshness2" name="freshness" value="used">Second</li>

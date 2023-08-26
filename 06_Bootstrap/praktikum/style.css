@@ -10,7 +10,7 @@ header{
     background-color: #fff;
 }
 
-.nav nav-pills{
+.wrapper{
     width: 100%;
     height: 60px;
     display: flex;
@@ -27,6 +27,7 @@ header{
     align-items: center;
     flex-direction: row;
     fontsize: 20px;
+    color: #0000;
 
 }
 

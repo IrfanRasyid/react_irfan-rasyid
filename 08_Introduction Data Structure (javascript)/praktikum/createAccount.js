@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Validasi input
     if (!validateInput(firstName, "firstName") || !validateInput(lastName, "lastName") || !validateInput(username, "username") ||
         !validateInput(email, "email") || !gender || !validateInput(address, "address") || !validateInput(nationality, "nationality") ||
-        languages.length === 0) {
+        languages.length === '') {
       return false;
     }
 

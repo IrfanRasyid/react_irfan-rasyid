@@ -278,3 +278,12 @@ footer{
     line-height: 19.5px; 
 }
 
+.custom-link {
+    color: #your-color; /* Ganti 'your-color' dengan warna yang Anda inginkan */
+    text-decoration: none; /* Untuk menghapus garis bawah default pada tautan */
+  }
+  
+  .custom-link:hover {
+    color: #your-hover-color; /* Warna saat tautan dihover */
+  }
+  

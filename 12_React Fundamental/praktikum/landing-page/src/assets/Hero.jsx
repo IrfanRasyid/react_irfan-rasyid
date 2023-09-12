@@ -1,60 +1,39 @@
 // import './style.css';
 // import './main.js';
-import Img from './img.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Img from "./img.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "https://code.jquery.com/jquery-3.6.0.min.js";
 
 function Hero() {
   return (
     <>
-      <div className="hero">
-        <div className="content">
-          <h1>Better Solution For Your Business</h1>
-          <p>
-            We are team of talented designers making websites with Bootstrap
-          </p>
-          <div className="link">
-            <a
-              href="createAccount.html"
-              type="button"
-              name="button"
-              className="button"
-            >
-              Get Started
-            </a>
-            <a href="#" className="vid">
-              Watch Video
-            </a>
+      <div className="container-fluid bg-primary text-white p-5">
+        <div className="row align-items-center">
+          <div className="col-lg-6">
+            <h1 className="display-4 bold-text">
+              Better Solution For Your Business
+            </h1>
+            <p className="lead">
+              We are a team of talented designers making websites with
+              Bootstrap.
+            </p>
+            <div className="d-flex">
+              <a href="#" className="btn btn-light btn-lg me-3">
+                Get Started
+              </a>
+              <a href="#" className="btn btn-light btn-lg">
+                Watch Video
+              </a>
+            </div>
           </div>
-        </div>
-        <figure>
-          <img
-            className="heroimg"
-            src={Img}
-            alt="img"
-            width={800}
-            height={400}
-          />
-        </figure>
-      </div>
-      <div className="closing">
-        <article>
-          <h3> Join Our Newsletter</h3>
-          <p>
-            Tamen quem nulla quae legam multos aute sint culpa legam noster
-            magna
-          </p>
-        </article>
-        <div className="form">
-          <input className="email" type="text" name="email" />
-          <a
-            href="createAccount.html"
-            type="button"
-            name="button"
-            className="button"
-          >
-            Subscribe
-          </a>
+          <div className="col-lg-6">
+            <img
+              src={Img}
+              alt="Your Image"
+              className="img-fluid rounded-circle"
+            />
+          </div>
         </div>
       </div>
     </>

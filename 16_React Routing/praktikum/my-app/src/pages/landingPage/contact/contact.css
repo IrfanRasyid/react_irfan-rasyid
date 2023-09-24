@@ -1,0 +1,19 @@
+.contact-container {
+    height: 330px;
+    background-color: #fff;
+    padding: 80px 50px;
+    display: flex;
+}
+
+.contact-title {
+    color: #37517E;
+    text-transform: uppercase;
+}
+
+.circel {
+    width: 36px;
+    height: 36px;
+    background: #47B2E4;
+    border-radius: 18px;
+
+}

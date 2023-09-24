@@ -1,0 +1,24 @@
+.menu-container {
+    height: 250px;
+    flex-direction: column;
+    background-color: #F3F5FA;
+}
+
+.input-main {
+    width: 300px;
+    border-radius: 50px;
+}
+
+.input-main:focus {
+    border: 1px solid #47B2E4;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-main {
+    background-color: #47B2E4;
+    border-radius: 50px;
+}
+
+.btn-main:hover {
+    background-color: #47B2E4;
+}

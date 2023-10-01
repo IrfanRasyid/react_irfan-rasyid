@@ -1,0 +1,15 @@
+.form-registrasi-container {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-registrasi-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.form-registrasi-button {
+    width: 100%;
+    margin: 0 0 10px 0;
+}

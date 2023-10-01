@@ -17,6 +17,8 @@ import {
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { DATA_PRODUCT } from "./constants";
+import { useDispatch } from "react-redux";
+import { addProduct, editProduct } from "../../../redux/slices/productSlice"; // Import editProduct
 
 const FormComponents = () => {
   const { TextArea } = Input;
@@ -25,7 +27,6 @@ const FormComponents = () => {
   const [count, setCount] = useState(data.length + 1);
   const { id } = useParams();
 
-  console.log("data", data);
   //filter data by id
   const dataFilter = id ? data.filter((item) => item.key === id) : data;
 
@@ -89,7 +90,6 @@ const FormComponents = () => {
       render: (_, record) =>
         data.length >= 1 ? (
           <Space>
-            {/* <a onClick={() => handleEdit(record)}>Edit</a> */}
             <Popconfirm
               title="Sure to delete?"
               arrow={false}
@@ -101,6 +101,15 @@ const FormComponents = () => {
             </Popconfirm>
           </Space>
         ) : null,
+    },
+    {
+      title: "Edit",
+      dataIndex: "edit",
+      render: (_, record) => (
+        <Button type="primary" onClick={() => handleEdit(record.key)}>
+          Edit
+        </Button>
+      ),
     },
     {
       //detail product
@@ -125,6 +134,24 @@ const FormComponents = () => {
     },
   ];
 
+  //edit data
+  const [editData, setEditData] = useState(null);
+  const handleEdit = (key) => {
+    const productToEdit = data.find((item) => item.key === key);
+    setEditData(productToEdit);
+  };
+
+  const updateData = (values) => {
+    const updatedData = data.map((item) =>
+      item.key === editData.key ? { ...item, ...values } : item
+    );
+
+    // Menggunakan dispatch untuk mengirim aksi Redux
+    dispatch(editProduct(editData.key, values));
+    setData(updatedData);
+    setEditData(null);
+  };
+
   //delete data
   const deleteData = (key) => {
     const newData = data.filter((item) => item.key !== key);
@@ -132,15 +159,19 @@ const FormComponents = () => {
   };
 
   //add data
+  const dispatch = useDispatch();
+
   const addData = (values) => {
     const newData = [
       ...data,
       {
-        //key number to string
         key: count.toString(),
         ...values,
       },
     ];
+
+    // Menggunakan dispatch untuk mengirim aksi Redux
+    dispatch(addProduct(newData));
     setData(newData);
     setCount(count + 1);
   };
@@ -169,7 +200,7 @@ const FormComponents = () => {
           <Row justify="center" style={{ margin: "60px" }}>
             <Col span={12}>
               <Title level={2}>Detail Product</Title>
-              <Form name="product" layout="vertical" onFinish={addData}>
+              <Form name="product" layout="vertical" onFinish={editData ? updateData : addData}>
                 <Form.Item
                   {...layout}
                   label="Product Name"
@@ -240,7 +271,7 @@ const FormComponents = () => {
                     <Space direction="vertical">
                       <Radio value="Brand New"> Brand New </Radio>
                       <Radio value="Second Hand"> Second Hand </Radio>
-                      <Radio value="Refufbished"> Refufbished </Radio>
+                      <Radio value="Refurbished"> Refurbished </Radio>
                     </Space>
                   </Radio.Group>
                 </Form.Item>
@@ -272,7 +303,7 @@ const FormComponents = () => {
                   <InputNumber placeholder="$1" />
                 </Form.Item>
                 <Button type="primary" htmlType="submit">
-                  Submit
+                  {editData ? "Update" : "Submit"}
                 </Button>
               </Form>
             </Col>

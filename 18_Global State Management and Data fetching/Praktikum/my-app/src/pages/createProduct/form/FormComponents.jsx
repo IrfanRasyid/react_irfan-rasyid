@@ -84,7 +84,7 @@ const FormComponents = () => {
       ),
     },
     {
-      //edit and delete
+      //delete
       title: "Action",
       dataIndex: "action",
       render: (_, record) =>

@@ -19,7 +19,6 @@ import { Link, useParams } from "react-router-dom";
 import { DATA_PRODUCT } from "./constants";
 import { useDispatch } from "react-redux";
 import { addProduct, editProduct } from "../../../redux/slices/productSlice"; // Import editProduct
-import { APIProducts } from "../../../api/APIProduct";
 
 const FormComponents = () => {
   const { TextArea } = Input;
@@ -177,20 +176,6 @@ const FormComponents = () => {
     setCount(count + 1);
   };
 
-  useEffect(() => {
-    APIProducts.getProducts().then((data) => {
-      setState({ products: data });
-    });
-  }, []);
-
-  const navigate = useNavigate();
-  function handleDetailClick(item) {
-    navigate(`/product/${item.key}`, { state: { item } });
-  }
-  function handleEditClick(item) {
-    navigate(`/edit-product/${item.key}`, { state: { item } });
-  }
-
   return (
     <>
       {/* id is true */}
@@ -327,7 +312,7 @@ const FormComponents = () => {
             <Col span={14}>
               <Table
                 columns={TABLE_COLUMNS}
-                dataSource={id ? dataFilter : apiData} // Menggunakan dataFilter jika id ada, atau apiData jika tidak
+                dataSource={data}
                 style={{ margin: "30px 0" }}
                 pagination={false}
               />
